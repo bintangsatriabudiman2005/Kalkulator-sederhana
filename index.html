@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <input type="number" id="angka1" placeholder="Masukkan Angka Pertama">
+    <select id="operator">
+        <option value="1">+</option>
+        <option value="2">-</option>
+        <option value="3">*</option>
+        <option value="4">/</option>
+    </select>
+    <input type="number2" id="angka2" placeholder="Masukkan Angka Kedua">
+    <button onclick="Hasil()">Hasil</button>
+    <h1 id="hasill">.....</h1>
+
+    <script>
+        function Hasil() {
+            const angka1 = document.getElementById("angka1").value;
+            const angka2 = document.getElementById("angka2").value;
+            const operator = document.getElementById("operator").value;
+
+            const num1 = Number(angka1);
+            const num2 = Number(angka2);
+            let hasil;
+
+            if (operator === "1") {
+                hasil = num1 + num2;
+            } else if (operator === "2") {
+                hasil = num1 - num2;
+            } else if (operator === "3") {
+                hasil = num1 * num2;
+            } else if (operator === "4") {
+                hasil = num1 / num2;
+            } else {
+                hasil = "Operator tidak valid";
+            }
+
+            document.getElementById("hasill").innerHTML = hasil;
+        }
+    </script>
+</body>
+</html>
